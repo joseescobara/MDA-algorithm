@@ -2,7 +2,7 @@ setwd("ruta")
 #-----------------------------------------------------------------------------
 #Datos para aplicar el algoritmo MDA (Comuna Robledo, Medellín)
 #-----------------------------------------------------------------------------
-load(r"ruta")
+load(r"ruta")#ruta base de datos real
 load("parametros_reales_slash.Rdata")
 
 #-----------------------------------------------------------------------------
