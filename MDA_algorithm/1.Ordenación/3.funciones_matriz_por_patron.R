@@ -1,7 +1,6 @@
 
 #------------------------------------------------------------------------------
-#en este caso modifiqué la función a que solo me reciba la matriz en patrón 
-#monótono
+#función para extraer las filas donde comienza cada patrón
 find_pattern <- function(y_mp){
   begin <- begin_patrones(y_mp) #hago uso de la función begin_patrones
   #para extraer las filas donde comienzan los patrones
@@ -13,6 +12,7 @@ find_pattern <- function(y_mp){
   return(h)
 }
 #-----------------------------------------------------------------------------
+#función que me devuelve las columnas donde está cada patrón real.
 numero_columna <- function(y_mp){
   filas_comienzo <- find_pattern(y_mp) #utiliza la funcion find_pattern
   #para utilizar las filas donde comienzan los patrones
@@ -26,7 +26,7 @@ numero_columna <- function(y_mp){
   return(columnas)
 }
 #-----------------------------------------------------------------------------
-#le hice el ajuste de que solo recibiera los datos en patrón monótono
+#función que me devuelve submatrices de acuerdo a los patrones reales.
 matriz_patrones <- function(y_mp){
   datos_mp <- data.frame(y_mp, check.names = F) #convierto los datos en un data frame
   begin <- begin_patrones(datos_mp) #usa la funcion find_patter para detectar
