@@ -1,7 +1,7 @@
 #distribución posterior de los parámetros del modelo slash
 setwd("ruta")
 load("estimaciones_modelo_slash_50.Rdata")
-load(r"ruta")
+load(r"ruta") #ruta base de datos real
 load("aplicacion_modelo_slash.Rdata")
 load("estimaciones_modelo_slash_50.Rdata")
 load("estimaciones_modelo_slash_100.Rdata")
