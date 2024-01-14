@@ -6,12 +6,12 @@
 #coeficiente y la matriz de varcov para utilizarlos como datos
 #iniciales
 
-setwd("C:/Users/Jose/OneDrive - Universidad de Antioquia/Escritorio/Maestria/Tesis/Algoritmo MDA/Version_10_MDA")
+setwd("ruta")
 
 #-----------------------------------------------------------------------------
 #Datos para aplicar el algoritmo MDA (Comuna Robledo, Medellín)
 #-----------------------------------------------------------------------------
-#load(r"(C:\Users\Jose\OneDrive - Universidad de Antioquia\Escritorio\Maestria\Tesis\Algoritmo MDA\Version_9 MDA\db_1)")
+#load(r"ruta")
 
 #-----------------------------------------------------------------------------
 #librería a usar
@@ -138,7 +138,7 @@ load("estimaciones_150_modelo_t.Rdata")
 #lista_estimaciones_150_t <- list()
 set.seed(672221)
 semillas6 <- sample(1:1241240, length(muestra_tamaño_150_t_faltantes))
-for (i in 927:length(muestra_tamaño_150_t_faltantes)){
+for (i in 1:length(muestra_tamaño_150_t_faltantes)){
   set.seed(semillas6[i])
   y_mp6 <- patron_monotono(muestra_tamaño_150_t_faltantes[[i]], matriz_diseño_150_t )[[1]]
   x_mp6 <- patron_monotono(muestra_tamaño_150_t_faltantes[[i]], matriz_diseño_150_t )[[2]]
