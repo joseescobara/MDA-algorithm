@@ -16,7 +16,7 @@ matrices_Bk <- function(y_mp, x_mp, pesos){
 
 #------------------------------------------------------------------------------
 
-#función que me devuelve las matrices b_k
+#función que me devuelve las matrices b_k inversa
 matrices_bk_inv <- function(y_mp, x_mp, pesos){
   #uso de la función para la estimación de las matrices de ceoficientes
   #y las matrices de productos cruzados y suma totaltes de los errores al
