@@ -1,6 +1,6 @@
 #distribución posterior de los parámetros del modelo slash
 setwd("ruta")
-load(r"ruta")
+load(r"ruta") #ruta base de datos real
 load("parametros_reales_slash.rdata")
 load("aplicacion_modelo_slash.Rdata")
 library(fBasics)
