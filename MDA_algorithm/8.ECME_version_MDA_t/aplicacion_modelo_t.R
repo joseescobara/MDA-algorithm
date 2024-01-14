@@ -1,9 +1,3 @@
-#vamos comenzar el algoritmos suponiendo que los datos tienen un patron 
-#monotono perfecto (no hay datos que destruyen el patrón monótono) y 
-#con pesos iniciales todos igual a uno (es decir, partiendo
-#de los pesos del modelo normal, para luego calcular los betas iniciales).
-#Además, como valor inicial para nu lo tomaremos igual a 7 por recomendacion
-
 #ECME version del MDA
 ECME_version_MDA_t <- function(y_mp, x_mp, B_0, M_0){
   #1. I Step---------------------------------------------------------
