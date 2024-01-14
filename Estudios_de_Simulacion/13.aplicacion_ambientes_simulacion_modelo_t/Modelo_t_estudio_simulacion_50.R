@@ -6,11 +6,11 @@
 #coeficiente y la matriz de varcov para utilizarlos como datos
 #iniciales
 
-setwd("C:/Users/Jose/OneDrive - Universidad de Antioquia/Escritorio/Maestria/Tesis/Algoritmo MDA/Version_10_MDA")
+setwd("ruta")
 #-----------------------------------------------------------------------------
 #Datos para aplicar el algoritmo MDA (Comuna Robledo, Medellín)
 #-----------------------------------------------------------------------------
-#load(r"(C:\Users\Jose\OneDrive - Universidad de Antioquia\Escritorio\Maestria\Tesis\Algoritmo MDA\Version_9 MDA\db_1)")
+#load(r"ruta")
 
 #-----------------------------------------------------------------------------
 #librería a usar
