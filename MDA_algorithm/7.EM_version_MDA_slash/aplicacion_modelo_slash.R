@@ -1,11 +1,4 @@
 #-------------------apliacion del modelo Slash------------------------------
-
-#vamos comenzar el algoritmos suponiendo que los datos tienen un patron 
-#monotono perfecto (no hay datos que destruyen el patrón monótono) y 
-#con pesos iniciales todos igual a uno (es decir, partiendo
-#de los pesos del modelo normal, para luego calcular los betas iniciales).
-#Además, como valor inicial para nu lo tomaremos igual a 7 por recomendacion
-
 #EM version del MDA
 EM_version_MDA_slash <- function(y_mp, x_mp, B_0, M_0, nu_0){
   #1. I Step---------------------------------------------------------
