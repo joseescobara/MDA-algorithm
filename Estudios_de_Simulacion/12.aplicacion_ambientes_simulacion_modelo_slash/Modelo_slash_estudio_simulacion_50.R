@@ -5,11 +5,11 @@
 #datos. Luego, corremos una iteración para extraer la matriz de 
 #coeficiente y la matriz de varcov para utilizarlos como datos
 #iniciales
-setwd("C:/Users/Jose/OneDrive - Universidad de Antioquia/Escritorio/Maestria/Tesis/Algoritmo MDA/Version_10_MDA")
+setwd("ruta")
 #-----------------------------------------------------------------------------
 #Datos para aplicar el algoritmo MDA (Comuna Robledo, Medellín)
 #-----------------------------------------------------------------------------
-#load(r"(C:\Users\Jose\OneDrive - Universidad de Antioquia\Escritorio\Maestria\Tesis\Algoritmo MDA\Version_9 MDA\db_1)")
+#load(r"ruta")
 
 #-----------------------------------------------------------------------------
 #librería a usar
@@ -148,7 +148,7 @@ load("muestras_50_slash_faltantes.Rdata")
 load("estimaciones_modelo_slash_50.Rdata")
 set.seed(82020)
 semillas <- sample(1:1000000, length(muestras_50_slash_faltantes))
-for (i in 13:length(muestras_50_slash_faltantes)){
+for (i in 1:length(muestras_50_slash_faltantes)){
   set.seed(semillas[i])#semilla
   y_mp1 <- patron_monotono(muestras_50_slash_faltantes[[i]], matriz_diseño_50_slash)[[1]]
   x_mp1 <- patron_monotono(muestras_50_slash_faltantes[[i]], matriz_diseño_50_slash)[[2]]
@@ -160,57 +160,6 @@ for (i in 13:length(muestras_50_slash_faltantes)){
   }
 
 #------------------------------------------------------------------------
-
-simulaciones <- lista_estimaciones_50_slash
-y_mp <- muestras_50_slash_faltantes[[1]]
-  #obtenidas
-  Nsim = length(simulaciones)
-  matriz_coeficientes <- list()
-  matriz_varianzas <- list()
-  nu <- c()
-  for (i in 1:Nsim) {
-    matriz_coeficientes[[i]] <- simulaciones[[i]][[1]] #matriz de betas 
-    matriz_varianzas[[i]] <- simulaciones[[i]][[2]] #matriz de varianzas y covarianzas
-    nu[i] <- simulaciones[[i]][[3]]
-  }
-  
-  A <- matrix(0, ncol = nrow(as.matrix(matriz_coeficientes[[1]]))*
-                ncol(as.matrix(matriz_coeficientes[[1]])), 
-              nrow = length(matriz_coeficientes))
-  
-  B <- matrix(0, ncol = (ncol(y_mp)*(ncol(y_mp)+1))/2,
-              nrow = length(matriz_varianzas))
-  colnames(A) <- c("B_01", "B_11", "B_21", "B_31",
-                   "B_02", "B_12", "B_22", "B_32",
-                   "B_03", "B_13", "B_23", "B_33")
-  colnames(B) <- c("sigma_11", "sigma_21", "sigma_31", "sigma_22",
-                   "sigma_32", "sigma_33")
-  for (i in 1:length(matriz_coeficientes)) {
-    coef <-  vec(matriz_coeficientes[[i]])
-    A[i, ] <- coef
-  }
-  
-  for (i in 1:length(matriz_varianzas)) {
-    mcov <-  vech(matriz_varianzas[[i]])
-    B[i, ] <- mcov
-  }
-  
-  medianas_coeficientes <- apply(A, 2, median)
-  median_var <- apply(B, 2, median)
-  coef_estimados <- t(matrix(medianas_coeficientes, byrow = T, nrow = 3))
-  var_estimadas <- matrix(c(median_var[1], median_var[2], median_var[3],
-                            median_var[2], median_var[4], median_var[5],
-                            median_var[3], median_var[5], median_var[6]), 
-                          byrow = T, nrow = 3)
-  colnames(coef_estimados) <- colnames(matriz_coeficientes[[1]])
-  rownames(coef_estimados) <- rownames(matriz_coeficientes[[1]])
-  
-  colnames(var_estimadas) <- colnames(y_mp)
-  rownames(var_estimadas) <- colnames(y_mp)
-  
-  nu_est <- median(nu)
-  estimaciones <- list(coef_estimados, var_estimadas, nu_est)
-estimaciones
 
 
 
