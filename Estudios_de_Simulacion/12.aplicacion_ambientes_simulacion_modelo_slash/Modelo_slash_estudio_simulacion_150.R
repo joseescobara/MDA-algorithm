@@ -5,11 +5,11 @@
 #datos. Luego, corremos una iteración para extraer la matriz de 
 #coeficiente y la matriz de varcov para utilizarlos como datos
 #iniciales
-setwd("C:/Users/Jose/OneDrive - Universidad de Antioquia/Escritorio/Maestria/Tesis/Algoritmo MDA/Version_10_MDA")
+setwd("ruta")
 #-----------------------------------------------------------------------------
 #Datos para aplicar el algoritmo MDA (Comuna Robledo, Medellín)
 #-----------------------------------------------------------------------------
-#load(r"(C:\Users\Jose\OneDrive - Universidad de Antioquia\Escritorio\Maestria\Tesis\Algoritmo MDA\Version_9 MDA\db_1)")
+#load(r"ruta")
 
 #-----------------------------------------------------------------------------
 #librería a usar
@@ -147,7 +147,7 @@ load("estimaciones_modelo_slash_150.Rdata")
 #lista_estimaciones_150_slash <- list()
 set.seed(100020)
 semillas3 <- sample(1:1000000, length(muestras_150_slash_faltante))
-for (i in 121:length(muestras_150_slash_faltante)){
+for (i in 1:length(muestras_150_slash_faltante)){
   set.seed(semillas3[i])#semilla
   y_mp3 <- patron_monotono(muestras_150_slash_faltante[[i]], matriz_diseño_150_slash)[[1]]
   x_mp3 <- patron_monotono(muestras_150_slash_faltante[[i]], matriz_diseño_150_slash)[[2]]
