@@ -5,12 +5,12 @@
 #datos. Luego, corremos una iteración para extraer la matriz de 
 #coeficiente y la matriz de varcov para utilizarlos como datos
 #iniciales
-setwd("C:/Users/Jose/OneDrive - Universidad de Antioquia/Escritorio/Maestria/Tesis/Algoritmo MDA/Version_10_MDA")
+setwd("ruta")
 
 #-----------------------------------------------------------------------------
 #Datos para aplicar el algoritmo MDA (Comuna Robledo, Medellín)
 #-----------------------------------------------------------------------------
-#load(r"(C:\Users\Jose\OneDrive - Universidad de Antioquia\Escritorio\Maestria\Tesis\Algoritmo MDA\Version_9 MDA\db_1)")
+#load(r"ruta")
 
 #-----------------------------------------------------------------------------
 #librería a usar
@@ -131,7 +131,6 @@ source("11.ambientes_simulacion_modelo_t/t_model_ambiente_simulacion_n_100.R")
 #save(muestra_tamaño_100_t_faltante, matriz_diseño_100_t, 
 #     file = "muestras_100_t_faltantes.Rdata")
 load("muestras_100_t_faltantes.Rdata")
-#load("estimaciones_100_modelo_t.Rdata")
 #-----------------------------------------------------------------------------
 
 lista_estimaciones_100_t <- list()
